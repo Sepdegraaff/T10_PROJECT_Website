@@ -1,0 +1,73 @@
+{% extends "layout.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <div class="flex {{ mainBgtwo }} w-full h-screen max-h-screen text-gray-100">
+        <div class="flex flex-col p-12 gap-12 m-auto text-center">
+            <h1 class="hidden-animation transition-all duration-1000 text-[12vw]">Welkom!</h1>
+            <h2 class="hidden-animation transition-all duration-1000 delay-150 text-[2vw]">Python puzzel</h2>
+        </div>
+    </div>
+
+    <div id="navigation" class="flex {{ mainBgOne }} w-full h-screen max-h-screen justify-center text-gray-300">
+
+        <div class="flex flex-col gap-12 items-center w-full">
+
+            <div class="flex flex-row gap-12 absolute self-end justify-self-end items-center p-16">
+
+                <p class="hidden-animation transition-all duration-1000 text-[2vw]">Gebruik het menu om te navigeren &rarr;</p>
+
+                <div id="menuOpen" class="menu flex min-w-[125px] h-8 text-center items-center justify-center cursor-pointer rounded-2xl bg-gray-300 shadow-2xl text-black transition-all duration-1000 delay-300">
+                    <span>Menu</span>
+                </div>
+
+                <div id="menu" class="hidden flex-col min-w-[125px] h-8 transition-all duration-1000 delay-300">
+                    <a class="menuLink hover:scale-125 hover:underline transition-all duration-1000" href="#Scores">Scores</a>
+                </div>
+
+            </div>
+
+            <div class="flex flex-row h-full justify-center items-center">
+                <h2 class="hidden-animation transition-all duration-1000 text-[10vw]">Dikke vette puzzel</h2>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="Scores" class="flex {{ mainBgtwo }} w-full h-screen max-h-screen text-gray-100">
+
+        <div class="flex absolute right-0 p-12">
+            <a class="text-2xl" href="#navigation">&uarr;</a>
+        </div>
+
+        <div class="container mx-auto py-8">
+            <h1 class="text-2xl font-bold text-center mb-6">Score Table</h1>
+            <table class="min-w-full bg-white rounded-lg shadow-md">
+                <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-3 px-6 text-left">Player</th>
+                    <th class="py-3 px-6 text-left">Score</th>
+                    <th class="py-3 px-6 text-left">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for score in scores %}
+                    <tr class="{{ loop.index is odd ? 'bg-gray-50' : 'bg-gray-100' }} hover:bg-gray-200">
+                        <td class="py-3 px-6">{{ score.player_id }}</td>
+                        <td class="py-3 px-6">{{ score.score_value }}</td>
+                        <td class="py-3 px-6">{{ score.date|date('Y-m-d') }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td class="py-3 px-6 text-center text-black" colspan="4">No scores available</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

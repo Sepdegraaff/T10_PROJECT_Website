@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="zxx" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="scripts/animation-detection.js"></script>
+    <script defer src="scripts/menu-animation.js"></script>
+    <link rel="stylesheet" href="styles/tailwind.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <title>{% block title %}{% endblock %} - Python puzzel</title>
+</head>
+<body class="antialiased">
+<main class="max-h-max">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

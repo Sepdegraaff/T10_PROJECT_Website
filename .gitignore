@@ -1,0 +1,13 @@
+# Ignore Composer related files
+composer.lock
+vendor/
+
+# Ignore Tailwind CSS files
+node_modules/
+
+# Ignore PhpStorm project files
+.idea/
+
+# General ignores
+.DS_Store
+Thumbs.db

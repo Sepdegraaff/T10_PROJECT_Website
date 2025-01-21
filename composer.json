@@ -1,0 +1,23 @@
+{
+    "name": "sepde/t10_proj_website",
+    "description": "Simple website",
+    "type": "project",
+    "require": {
+        "kyrill/php-route": "dev-main",
+        "twig/twig": "3.0",
+        "ext-mysqli": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sepde\\T10ProjWebsite\\": "modules/core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SepdeGraaff",
+            "email": "sep.de.graaff@maxserv.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
