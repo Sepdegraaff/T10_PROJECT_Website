@@ -5,7 +5,8 @@
     "require": {
         "kyrill/php-route": "dev-main",
         "twig/twig": "3.0",
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "ext-pdo": "*"
     },
     "license": "MIT",
     "autoload": {

@@ -2,6 +2,7 @@
 
 namespace Sepde\T10ProjWebsite\Controllers;
 
+use Exception;
 use Sepde\T10ProjWebsite\Functions\DBconnect;
 use Twig\Environment;
 use Twig\Error\LoaderError;
@@ -12,6 +13,8 @@ use Twig\Loader\FilesystemLoader;
 abstract class BaseController
 {
     private Environment $twig;
+    protected ?\PDO $conn = null;
+
 
     public function __construct()
     {
@@ -27,10 +30,5 @@ abstract class BaseController
     public function render(string $template, array $arguments = []): void
     {
         echo $this->twig->render($template, $arguments);
-    }
-
-    public function getConnection(): ?\mysqli
-    {
-        return (new DBconnect())->connection();
     }
 }
